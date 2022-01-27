@@ -4,7 +4,7 @@ require 'redis'
 
 def run_calculator
   puts "[#{Process.pid}] calculator spawn"
-  redis = Redis.new(url: 'redis://172.17.0.1:6379')
+  redis = Redis.new(url: 'redis://172.17.0.1:6379', timeout: 20)
   loop do
     sets = []
     rand(2..10).times do
