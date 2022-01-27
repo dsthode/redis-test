@@ -7,7 +7,7 @@ def run_calculator
   redis = Redis.new(url: 'redis://172.17.0.1:6379')
   loop do
     sets = []
-    rand(1..10).times do
+    rand(2..10).times do
       sets << "set_#{rand(100)}"
     end
     puts "[#{Process.pid}] intersection of #{sets.join(',')}"
